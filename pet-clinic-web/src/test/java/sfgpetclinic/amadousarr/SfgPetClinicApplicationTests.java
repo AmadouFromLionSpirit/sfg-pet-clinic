@@ -1,4 +1,4 @@
-package com.amadousarr.sfgpetclinic;
+package sfgpetclinic.amadousarr;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
