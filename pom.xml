@@ -47,6 +47,7 @@
                     <configuration>
                         <!-- And by default the goal is going to be running for deploy-->
                         <goals>install</goals>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
                     </configuration>
                 </plugin>
             </plugins>
