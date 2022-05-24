@@ -1,5 +1,14 @@
+com\amadousarr\sfgpetclinic\services\VetService.class
 com\amadousarr\sfgpetclinic\model\Person.class
+com\amadousarr\sfgpetclinic\services\CrudService.class
+com\amadousarr\sfgpetclinic\services\map\PetServiceMap.class
+com\amadousarr\sfgpetclinic\services\OwnerService.class
 com\amadousarr\sfgpetclinic\model\Vet.class
+com\amadousarr\sfgpetclinic\services\map\AbstractMapService.class
+com\amadousarr\sfgpetclinic\services\map\VetServiceMap.class
+com\amadousarr\sfgpetclinic\services\PetService.class
 com\amadousarr\sfgpetclinic\model\Owner.class
-com\amadousarr\sfgpetclinic\model\PetType.class
+com\amadousarr\sfgpetclinic\model\BaseEntity.class
 com\amadousarr\sfgpetclinic\model\Pet.class
+com\amadousarr\sfgpetclinic\services\map\OwnerServiceMap.class
+com\amadousarr\sfgpetclinic\model\PetType.class

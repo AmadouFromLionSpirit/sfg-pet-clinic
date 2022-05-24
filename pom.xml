@@ -25,7 +25,11 @@
 
     <properties>
         <java.version>17</java.version>
+        <start-class>com.amadousarr.sfgpetclinic.SfgPetClinicApplication</start-class>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
+
     <scm>
         <developerConnection>
             scm:git:https://github.com/AmadouFromLionSpirit/sfg-pet-clinic.git
