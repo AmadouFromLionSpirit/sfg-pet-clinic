@@ -1,10 +1,8 @@
 package com.amadousarr.sfgpetclinic.bootstrap;
-import com.amadousarr.sfgpetclinic.model.Owner;
-import com.amadousarr.sfgpetclinic.model.Pet;
-import com.amadousarr.sfgpetclinic.model.PetType;
-import com.amadousarr.sfgpetclinic.model.Vet;
+import com.amadousarr.sfgpetclinic.model.*;
 import com.amadousarr.sfgpetclinic.services.OwnerService;
 import com.amadousarr.sfgpetclinic.services.PetTypeService;
+import com.amadousarr.sfgpetclinic.services.SpecialityService;
 import com.amadousarr.sfgpetclinic.services.VetService;
 
 
@@ -20,14 +18,40 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    private final SpecialityService specialityService;
+
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
         this.ownerService = ownerService;
 
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialityService = specialityService;
     }
     @Override
     public void run(String... args) throws Exception {
+        //to avoid persisting multiple times in our mimicking database
+        int count = petTypeService.findAll().size();
+        if(count == 0) {
+            loadData();
+        }
+
+
+
+    }
+
+    private void loadData() {
+        Speciality radiology = new Speciality();
+        radiology.setDescription("Radiology");
+        Speciality savedRadiology = specialityService.save(radiology);
+
+        Speciality surgery = new Speciality();
+        surgery.setDescription("Surgery");
+        Speciality savedSurgery = specialityService.save(surgery);
+
+        Speciality dentistry = new Speciality();
+        dentistry.setDescription("Dentistry");
+        Speciality savedDentistry = specialityService.save(dentistry);
+
         PetType dog = new PetType();
         dog.setName("Dog");
         PetType savedDogPetType = petTypeService.save(dog);
@@ -76,6 +100,7 @@ public class DataLoader implements CommandLineRunner {
 
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
+        vet1.getSpecialities().add(savedRadiology);
 
         vetService.save(vet1);
 
@@ -83,16 +108,12 @@ public class DataLoader implements CommandLineRunner {
 
         vet2.setFirstName("Jessie");
         vet2.setLastName("Porter");
+        vet2.getSpecialities().add(savedSurgery);
 
         vetService.save(vet2);
 
 
-
         System.out.println("Loaded Vets...");
-
-
-
-
     }
 
 
