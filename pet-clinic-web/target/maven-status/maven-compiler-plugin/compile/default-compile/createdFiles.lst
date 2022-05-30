@@ -1,5 +1,5 @@
 com\amadousarr\sfgpetclinic\controllers\VetController.class
 com\amadousarr\sfgpetclinic\controllers\IndexController.class
+com\amadousarr\sfgpetclinic\controllers\OwnerController.class
 com\amadousarr\sfgpetclinic\bootstrap\DataLoader.class
 com\amadousarr\sfgpetclinic\SfgPetClinicApplication.class
-com\amadousarr\sfgpetclinic\controllers\OwnerController.class
