@@ -2,14 +2,13 @@ package com.amadousarr.sfgpetclinic.services.map;
 
 import com.amadousarr.sfgpetclinic.model.Speciality;
 import com.amadousarr.sfgpetclinic.model.Vet;
-import com.amadousarr.sfgpetclinic.services.CrudService;
 import com.amadousarr.sfgpetclinic.services.SpecialityService;
 import com.amadousarr.sfgpetclinic.services.VetService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
     private SpecialityService specialityService;
     @Override
     public Set<Vet> findAll() {
