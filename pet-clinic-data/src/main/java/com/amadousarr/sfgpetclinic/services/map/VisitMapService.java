@@ -35,6 +35,7 @@ public class VisitMapService extends AbstractMapService<Visit,Long> implements V
 
     @Override
     public void deleteById(Long id) {
+        System.out.println("Delete by id");
         super.deleteByID(id);
 
     }
