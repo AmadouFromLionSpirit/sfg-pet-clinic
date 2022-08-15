@@ -3,6 +3,7 @@ package com.amadousarr.sfgpetclinic.services.map;
 import com.amadousarr.sfgpetclinic.model.Owner;
 
 import com.amadousarr.sfgpetclinic.model.Pet;
+import com.amadousarr.sfgpetclinic.repositories.OwnerRepository;
 import com.amadousarr.sfgpetclinic.services.OwnerService;
 import com.amadousarr.sfgpetclinic.services.PetService;
 import com.amadousarr.sfgpetclinic.services.PetTypeService;
@@ -72,6 +73,10 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner findByLastName(String lastName) {
-        return null;
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
+                .findFirst()
+                .orElse(null);
     }
 }
