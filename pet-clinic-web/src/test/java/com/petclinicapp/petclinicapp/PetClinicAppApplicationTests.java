@@ -3,7 +3,8 @@ package com.petclinicapp.petclinicapp;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+
+@SpringBootTest(classes = PetClinicAppApplication.class)
 class PetClinicAppApplicationTests {
 
 	@Test
